@@ -1,25 +1,9 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart'
     show debugDefaultTargetPlatformOverride;
 
 void main() {
-    debugDefaultTargetPlatformOverride = TargetPlatform.android;
-    _setTargetPlatformForDesktop();
     runApp(MyApp());
-}
-
-void _setTargetPlatformForDesktop() {
-    TargetPlatform targetPlatform;
-    if (Platform.isMacOS) {
-        targetPlatform = TargetPlatform.iOS;
-    } else if (Platform.isLinux || Platform.isWindows) {
-        targetPlatform = TargetPlatform.android;
-    }
-    if (targetPlatform != null) {
-        debugDefaultTargetPlatformOverride = targetPlatform;
-    }
 }
 
 class MyApp extends StatelessWidget {
